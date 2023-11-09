@@ -1,12 +1,15 @@
 {
   "compilerOptions": {
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "baseUrl": ".",
     "target": "ESNext",
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
     ],
-    "types": ["vite/client"],
+    "types": ["vite/client", "react"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
