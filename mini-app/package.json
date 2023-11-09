@@ -5,7 +5,9 @@
     "start": "vite",
     "predeploy": "npm run build",
     "deploy": "vk-miniapps-deploy",
-    "tunnel": "vk-tunnel --insecure=1 --http-protocol=https --ws-protocol=wss --host=0.0.0.0 --port=10888"
+    "tunnel": "vk-tunnel --insecure=1 --http-protocol=https --ws-protocol=wss --host=0.0.0.0 --port=10888",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "lint:eslint": "eslint -c .eslintrc.json \"./src/**/*.{ts,tsx}\" --cache --quiet"
   },
   "engines": {
     "node": ">=12.0.0"
