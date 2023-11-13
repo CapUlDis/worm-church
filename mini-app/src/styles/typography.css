@@ -1,0 +1,101 @@
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: SF Pro Text;
+  src: url('../assets/fonts/SF Pro Text/SF-Pro-Text-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: SF Pro Text;
+  src: url('../assets/fonts/SF Pro Text/SF-Pro-Text-Medium.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 600;
+  font-style: normal;
+  font-family: SF Pro Text;
+  src: url('../assets/fonts/SF Pro Text/SF-Pro-Text-Semibold.otf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 500;
+  font-style: normal;
+  font-family: OsvaldMediumC;
+  src: url('../assets/fonts/OsvaldMediumC/Oswald-Medium.ttf') format('opentype');
+  font-display: swap;
+}
+
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: SF Pro Display;
+  src: url('../assets/fonts/SF Pro Display/SF-Pro-Display-Regular.otf') format('opentype');
+  font-display: swap;
+}
+
+.text-regular {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: SF Pro Text;
+  line-height: 20px;
+}
+
+.text-medium {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: SF Pro Text;
+  line-height: 20px;
+}
+
+.title-1 {
+  font-size: 28px;
+  font-weight: 500;
+  font-family: OsvaldMediumC;
+  line-height: 34px;
+}
+
+.title-2 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: OsvaldMediumC;
+  line-height: 24px;
+}
+
+.title-3-medium {
+  font-size: 17px;
+  font-weight: 500;
+  font-family: SF Pro Text;
+  line-height: 22px;
+}
+
+.title-3-semibold {
+  font-size: 17px;
+  font-weight: 600;
+  font-family: SF Pro Text;
+  line-height: 22px;
+}
+
+.subhead-regular {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: SF Pro Text;
+  line-height: 18px;
+}
+
+.caption-regular {
+  font-size: 12px;
+  font-weight: 400;
+  font-family: SF Pro Text;
+}
+
+.text-stories {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: SF Pro Display;
+  line-height: 24px;
+}
