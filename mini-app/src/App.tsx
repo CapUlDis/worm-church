@@ -1,39 +1,22 @@
-import {useState, useEffect, ReactNode, MouseEventHandler} from 'react';
-import bridge, {UserInfo} from '@vkontakte/vk-bridge';
+import {useState, ReactNode, memo} from 'react';
 import {View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
+import {Main, PANELS_IDS} from './panels';
 
-import Home from './panels/Home';
-import Persik from './panels/Persik';
-
-const App = () => {
-  const [activePanel, setActivePanel] = useState('home');
-  const [fetchedUser, setUser] = useState<UserInfo | undefined>();
+export const App = memo(() => {
+  const [activePanel, setActivePanel] = useState<PANELS_IDS>(PANELS_IDS.MAIN);
   const [popout, setPopout] = useState<ReactNode | null>(<ScreenSpinner size="large" />);
 
-  useEffect(() => {
-    async function fetchData() {
-      const user = await bridge.send('VKWebAppGetUserInfo');
-      setUser(user);
-      setPopout(null);
-    }
-
-    fetchData();
-  }, []);
-
-  const go: MouseEventHandler<HTMLElement> = (e) => {
-    setActivePanel(e.currentTarget.dataset.to ?? 'home');
-  };
+  console.log('activePanel=', activePanel);
 
   return (
     <ConfigProvider>
       <AdaptivityProvider>
         <AppRoot>
-          <SplitLayout popout={popout}>
+          <SplitLayout>
             <SplitCol>
-              <View activePanel={activePanel}>
-                <Home id="home" fetchedUser={fetchedUser} go={go} />
-                <Persik id="persik" go={go} />
+              <View id="view" activePanel={activePanel}>
+                <Main id={PANELS_IDS.MAIN} />
               </View>
             </SplitCol>
           </SplitLayout>
@@ -41,6 +24,6 @@ const App = () => {
       </AdaptivityProvider>
     </ConfigProvider>
   );
-};
+});
 
-export default App;
+App.displayName = 'App';
