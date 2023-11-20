@@ -1,8 +1,9 @@
-import {useState, ReactNode, memo} from 'react';
-import {View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol} from '@vkontakte/vkui';
+import {AdaptivityProvider, AppRoot, ConfigProvider, ScreenSpinner, SplitCol, SplitLayout, View} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
-import {Main, PANELS_IDS} from './panels';
+import {memo, ReactNode, useState} from 'react';
+
 import styles from './App.module.css';
+import {Main, PANELS_IDS} from './panels';
 
 export const App = memo(() => {
   const [activePanel, setActivePanel] = useState<PANELS_IDS>(PANELS_IDS.MAIN);

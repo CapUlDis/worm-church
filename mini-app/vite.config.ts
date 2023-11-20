@@ -1,8 +1,9 @@
-import react from '@vitejs/plugin-react';
 import basicSsl from '@vitejs/plugin-basic-ssl';
-import svgr from 'vite-plugin-svgr';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 import {defineConfig} from 'vite';
 import {createHtmlPlugin} from 'vite-plugin-html';
+import svgr from 'vite-plugin-svgr';
 
 export default defineConfig(() => {
   return {
@@ -22,6 +23,12 @@ export default defineConfig(() => {
       host: '0.0.0.0',
       port: 10888,
       open: true,
+    },
+    resolve: {
+      alias: {
+        assets: path.resolve(__dirname, './src/assets'),
+        panels: path.resolve(__dirname, './src/panels'),
+      },
     },
   };
 });
