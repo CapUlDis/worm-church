@@ -2,6 +2,7 @@ import {useState, ReactNode, memo} from 'react';
 import {View, ScreenSpinner, AdaptivityProvider, AppRoot, ConfigProvider, SplitLayout, SplitCol} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/vkui.css';
 import {Main, PANELS_IDS} from './panels';
+import styles from './App.module.css';
 
 export const App = memo(() => {
   const [activePanel, setActivePanel] = useState<PANELS_IDS>(PANELS_IDS.MAIN);
@@ -15,7 +16,7 @@ export const App = memo(() => {
         <AppRoot>
           <SplitLayout>
             <SplitCol>
-              <View id="view" activePanel={activePanel}>
+              <View id="view" activePanel={activePanel} className={styles.root}>
                 <Main id={PANELS_IDS.MAIN} />
               </View>
             </SplitCol>

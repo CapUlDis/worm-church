@@ -9,7 +9,7 @@
       "dom.iterable",
       "esnext"
     ],
-    "types": ["vite/client", "react"],
+    "types": ["vite/client", "react", "vite-plugin-svgr/client"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

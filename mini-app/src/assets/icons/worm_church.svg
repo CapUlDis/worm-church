@@ -1,0 +1,31 @@
+/// <reference types="vite-plugin-svgr/client" />
+<svg width="89" height="89" viewBox="0 0 89 89" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="Icon">
+    <path id="Vector"
+      d="M11.125 77.875V48.2083C11.125 47.2248 11.5157 46.2816 12.2111 45.5861C12.9066 44.8907 13.8498 44.5 14.8333 44.5H22.25"
+      stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path id="Vector_2"
+      d="M66.75 44.5H74.1667C75.1502 44.5 76.0934 44.8907 76.7889 45.5861C77.4843 46.2816 77.875 47.2248 77.875 48.2083V77.875"
+      stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path id="Vector_3"
+      d="M22.25 77.875V40.2614C22.2487 39.6092 22.4195 38.9682 22.745 38.403C23.0705 37.8379 23.5394 37.3686 24.1042 37.0425L42.6458 26.4478C43.206 26.1278 43.84 25.9595 44.4852 25.9595C45.1303 25.9595 45.7643 26.1278 46.3245 26.4478L64.8662 37.0425C65.431 37.3686 65.8998 37.8379 66.2254 38.403C66.5509 38.9682 66.7216 39.6092 66.7203 40.2614V77.875"
+      stroke="black" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    <path id="Vector_4" d="M44.5 19.304V26" stroke="black" stroke-width="3" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path id="Vector 5"
+      d="M49.1349 17.445C45.2566 18.3897 37.5 18.8053 37.5 12.9105C37.5 7.01575 44.3136 9.29542 47.1957 10.6433C49.6197 11.7769 52.6253 9.16961 51.074 5.54205C49.5227 1.91448 46.2262 1.76333 44.7718 2.1412"
+      stroke="#FF7A00" stroke-width="3" stroke-linecap="round" />
+    <path id="Vector_5" d="M55.625 59.3333V77.875" stroke="black" stroke-width="3" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path id="Vector_6" d="M33.375 77.875V59.3333" stroke="black" stroke-width="3" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path id="Vector_7" d="M44.5 59.3333V77.875" stroke="black" stroke-width="3" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path id="Vector_8" d="M7.41667 77.875H81.5833" stroke="black" stroke-width="3" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <path id="Vector_9" d="M33.375 59.3333H55.625" stroke="black" stroke-width="3" stroke-linecap="round"
+      stroke-linejoin="round" />
+    <circle id="Ellipse 1" cx="44.5" cy="44" r="5" stroke="black" stroke-width="3" stroke-linecap="round"
+      stroke-linejoin="round" />
+  </g>
+</svg>
