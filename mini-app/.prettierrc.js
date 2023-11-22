@@ -8,7 +8,7 @@ module.exports = {
   jsxSingleQuote: false,
   trailingComma: 'all',
   bracketSpacing: false,
-  importOrder: ['<THIRD_PARTY_MODULES>', '^assets(/.*)$', '^panels(/.*)$', '^styles(/.*)$', '^[../]', '^[./]'],
+  importOrder: ['<THIRD_PARTY_MODULES>', '^assets(/.*)$', '^panels(/.*)$', '^styles(/.*)$', '^utils(/.*)$', '^[../]', '^[./]'],
   importOrderSeparation: true,
   importOrderSortSpecifiers: true,
   importOrderCaseInsensitive: true,

@@ -23,6 +23,7 @@
       "assets/*": ["src/assets/*"],
       "panels/*": ["src/panels/*"],
       "styles/*": ["src/styles/*"],
+      "utils/*": ["src/utils/*"],
       "root/*": ["src/*"]
     }
   },
