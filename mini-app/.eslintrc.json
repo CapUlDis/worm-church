@@ -17,9 +17,9 @@
     }
   },
   "plugins": [
+    "prettier",
     "no-autofix",
     "@typescript-eslint",
-    "prettier",
     "react",
     "react-hooks",
     "react-memo",
@@ -29,7 +29,7 @@
   "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "mini-app/tsconfig.json",
+    "project": "./mini-app/tsconfig.json",
     "ecmaFeatures": {
       "jsx": true
     },
@@ -37,6 +37,7 @@
     "sourceType": "module"
   },
   "rules": {
+    // "prettier/prettier": "error",
     "eol-last": ["error", "always"],
     "max-len": [
       "error",
