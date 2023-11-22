@@ -8,7 +8,22 @@ export const Header = memo(() => {
   return (
     <div className={styles.container}>
       <WormChurchIcon />
-      <span className="title-3">Церковь Святого Червячка</span>
+      <div className={styles.textBlocks}>
+        <div className={styles.block}>
+          <span className="title-1">
+            Церковь Святого
+            <br />
+            Червячка
+          </span>
+        </div>
+        <div className={styles.block}>
+          <span className="text-regular">
+            Червячок уже посетил <span className="text-medium">873 384</span> профилей
+            <br />
+            Присоединяйтесь к нашей <a href="">группе</a> и <a href="">чату</a>
+          </span>
+        </div>
+      </div>
     </div>
   );
 });

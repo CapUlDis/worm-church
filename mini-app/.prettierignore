@@ -1,0 +1,3 @@
+*.css.d.ts
+/src/index.html
+/.vscode

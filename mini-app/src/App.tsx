@@ -1,5 +1,5 @@
 import {ScreenSpinner, SplitCol, SplitLayout, View} from '@vkontakte/vkui';
-import '@vkontakte/vkui/dist/vkui.css';
+import '@vkontakte/vkui/dist/components.css';
 import {memo, ReactNode, useState} from 'react';
 
 import styles from './App.module.css';
