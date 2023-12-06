@@ -1,0 +1,15 @@
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 16px;
+  align-self: stretch;
+}

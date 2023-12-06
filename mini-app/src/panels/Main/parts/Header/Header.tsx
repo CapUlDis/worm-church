@@ -1,6 +1,7 @@
+import {Link, Text, Title} from '@vkontakte/vkui';
 import {memo} from 'react';
 
-import WormChurchIcon from 'assets/icons/worm_church.svg?react';
+import WormChurchIcon from 'assets/icons/worm-church.svg?react';
 
 import styles from './Header.module.css';
 
@@ -10,18 +11,29 @@ export const Header = memo(() => {
       <WormChurchIcon />
       <div className={styles.textBlocks}>
         <div className={styles.block}>
-          <span className="title-1">
+          <Title level="1" weight="2">
             Церковь Святого
             <br />
             Червячка
-          </span>
+          </Title>
         </div>
         <div className={styles.block}>
-          <span className="text-regular">
-            Червячок уже посетил <span className="text-medium">873 384</span> профилей
+          <Text>
+            Червячок уже посетил{' '}
+            <Text weight="2" normalize={false}>
+              873 384
+            </Text>{' '}
+            профилей
             <br />
-            Присоединяйтесь к нашей <a href="">группе</a> и <a href="">чату</a>
-          </span>
+            Присоединяйтесь к нашей{' '}
+            <Link>
+              <u>группе</u>
+            </Link>{' '}
+            и{' '}
+            <Link>
+              <u>чату</u>
+            </Link>
+          </Text>
         </div>
       </div>
     </div>

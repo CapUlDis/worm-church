@@ -4,8 +4,7 @@ import {AdaptivityProvider, AppRoot, ConfigProvider} from '@vkontakte/vkui';
 import {memo} from 'react';
 import {createRoot} from 'react-dom/client';
 
-import 'styles/colors.css';
-import 'styles/globals.css';
+import {themeStyles} from 'styles/theme';
 import 'styles/typography.css';
 
 import {transformVKBridgeAdaptivity} from 'utils/transformVKBridgeAdaptivity';
@@ -27,6 +26,7 @@ const Root = memo(() => {
       isWebView={bridge.isWebView()}
       hasCustomPanelHeaderAfter={true}
     >
+      <style>{themeStyles}</style>
       <AdaptivityProvider {...vkBridgeAdaptivityProps}>
         <AppRoot mode="full" safeAreaInsets={vkBridgeInsets}>
           <App />

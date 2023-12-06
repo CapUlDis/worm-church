@@ -1,0 +1,9 @@
+.cards {
+  padding: 24px calc((100% - 400px) / 2);
+}
+
+@media screen and (width < 600px) {
+  .cards {
+    padding: 24px 20px;
+  }
+}

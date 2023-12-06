@@ -28,6 +28,7 @@
     "@vkontakte/vk-bridge": "^2.12.0",
     "@vkontakte/vk-bridge-react": "^1.0.1",
     "@vkontakte/vkui": "^5.9.6",
+    "@vkontakte/vkui-tokens": "^4.41.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -43,7 +44,10 @@
     "@vitejs/plugin-react": "^4.1.0",
     "@vkontakte/vk-miniapps-deploy": "^0.1.6",
     "@vkontakte/vk-tunnel": "^0.1.4",
+    "color": "^4.2.3",
+    "common-tags": "^1.8.2",
     "cross-env": "^7.0.3",
+    "css.escape": "^1.5.1",
     "eslint": "^8.53.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-no-autofix": "^1.2.3",

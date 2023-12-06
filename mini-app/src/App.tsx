@@ -2,7 +2,6 @@ import {ScreenSpinner, SplitCol, SplitLayout, View} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/components.css';
 import {memo, ReactNode, useState} from 'react';
 
-import styles from './App.module.css';
 import {Main, PANELS_IDS} from './panels';
 
 export const App = memo(() => {
@@ -12,7 +11,7 @@ export const App = memo(() => {
   return (
     <SplitLayout>
       <SplitCol>
-        <View id="view" activePanel={activePanel} className={styles.root}>
+        <View id="view" activePanel={activePanel}>
           <Main id={PANELS_IDS.MAIN} />
         </View>
       </SplitCol>
