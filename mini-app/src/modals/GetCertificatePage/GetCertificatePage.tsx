@@ -15,7 +15,7 @@ import {
   useAdaptivityConditionalRender,
   usePlatform,
 } from '@vkontakte/vkui';
-import {memo} from 'react';
+import {ChangeEvent, memo, useCallback, useState} from 'react';
 
 import styles from './GetCertificatePage.module.css';
 
@@ -27,6 +27,13 @@ type Props = {
 export const GetCertificatePage = memo<Props>(({id, onClose}) => {
   const platform = usePlatform();
   const {sizeX} = useAdaptivityConditionalRender();
+
+  const [walletId, setWalletId] = useState('');
+
+  const onWalletIdChange = useCallback(
+    (event: ChangeEvent<HTMLTextAreaElement>) => setWalletId(event.target.value),
+    [],
+  );
 
   return (
     <ModalPage
@@ -91,7 +98,7 @@ export const GetCertificatePage = memo<Props>(({id, onClose}) => {
 
             <Spacing size={10} />
 
-            <Textarea rows={2} />
+            <Textarea rows={2} value={walletId} onChange={onWalletIdChange} />
           </div>
         </div>
       </div>
@@ -99,7 +106,7 @@ export const GetCertificatePage = memo<Props>(({id, onClose}) => {
       <Spacing size={16} />
 
       <Div>
-        <Button mode="primary" size="l" rounded stretched>
+        <Button mode="primary" size="l" rounded stretched disabled={!walletId}>
           Получить удостоверение
         </Button>
       </Div>
