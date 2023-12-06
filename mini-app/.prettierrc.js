@@ -11,6 +11,7 @@ module.exports = {
   importOrder: [
     '<THIRD_PARTY_MODULES>',
     '^assets(/.*)$',
+    '^modals(/.*)$',
     '^panels(/.*)$',
     '^styles(/.*)$',
     '^utils(/.*)$',

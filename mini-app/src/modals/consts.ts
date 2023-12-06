@@ -1,0 +1,3 @@
+export enum MODALS_IDS {
+  GET_CERTIFICATE = 'GET_CERTIFICATE',
+}

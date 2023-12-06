@@ -21,6 +21,7 @@
     "jsx": "react-jsx",
     "paths": {
       "assets/*": ["src/assets/*"],
+      "modals/*": ["src/modals/*"],
       "panels/*": ["src/panels/*"],
       "styles/*": ["src/styles/*"],
       "utils/*": ["src/utils/*"],

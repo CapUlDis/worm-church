@@ -1,0 +1,12 @@
+.container {
+  padding: 0 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+.point {
+  display: flex;
+  gap: 12px;
+}

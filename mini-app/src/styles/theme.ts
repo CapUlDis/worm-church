@@ -16,13 +16,17 @@ const BASE_PADDING = 16;
 const BASE_BORDER_RADIUS = 32;
 
 theme.colors.colorBackground = BASE_BACKGROUND_COLOR;
+theme.colors.colorBackgroundModal = BASE_BACKGROUND_COLOR;
 theme.colors.colorBackgroundContent = BASE_BACKGROUND_COLOR;
+theme.colors.colorFieldBackground = BASE_BACKGROUND_COLOR;
 theme.colors.colorBackgroundAccentThemed = BASE_ACCENT_COLOR;
 theme.colors.colorBackgroundSecondaryAlpha = BASE_BACKGROUND_COLOR;
 theme.colors.colorBackgroundSecondary = BASE_CARD_COLOR;
 theme.colors.colorTextSecondary = BASE_COLOR_SECONDARY;
 theme.colors.colorIconAccent = BASE_ACCENT_COLOR;
 theme.colors.colorIconAccentThemed = BASE_ACCENT_COLOR;
+theme.colors.colorIconSecondary = BASE_ACCENT_COLOR;
+theme.colors.colorFieldBorderAlpha = BASE_ACCENT_COLOR;
 theme.colors.colorTextLink = '#000';
 
 theme.sizeBasePaddingVertical = {
@@ -31,6 +35,14 @@ theme.sizeBasePaddingVertical = {
 
 theme.sizeCardBorderRadius = {
   regular: BASE_BORDER_RADIUS,
+};
+
+theme.sizeBorder3x = {
+  regular: 1,
+};
+
+theme.sizeBorderRadius = {
+  regular: 10,
 };
 
 theme.fontText = {

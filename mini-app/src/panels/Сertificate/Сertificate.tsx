@@ -20,9 +20,10 @@ import styles from './Сertificate.module.css';
 type Props = {
   id: string;
   goToMain: () => void;
+  openGetCertificateModal: () => void;
 };
 
-export const Сertificate = memo<Props>(({id, goToMain}) => {
+export const Сertificate = memo<Props>(({id, goToMain, openGetCertificateModal}) => {
   const platform = usePlatform();
 
   const isCertificateReady = false;
@@ -93,7 +94,7 @@ export const Сertificate = memo<Props>(({id, goToMain}) => {
               Поделиться в истории
             </Button>
           ) : (
-            <Button size="l" mode="primary" stretched rounded>
+            <Button size="l" mode="primary" stretched rounded onClick={openGetCertificateModal}>
               Получить удостоверение
             </Button>
           )}

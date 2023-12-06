@@ -1,0 +1,1 @@
+export {GetCertificatePage} from './GetCertificatePage';
