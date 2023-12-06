@@ -2,14 +2,14 @@ import {Panel, PanelHeader} from '@vkontakte/vkui';
 import {memo} from 'react';
 
 import styles from './Main.module.css';
-import {Header, NotVisitedCard, SendWormCard, VisitedCard} from './parts';
+import {GratefulCard, Header, NotVisitedCard, SendWormCard, VisitedCard} from './parts';
 
 type Props = {
   id: string;
 };
 
 export const Main = memo<Props>(({id}) => {
-  const state = 'visited';
+  const state = 'sent';
 
   return (
     <Panel id={id}>
@@ -27,6 +27,7 @@ export const Main = memo<Props>(({id}) => {
                 <SendWormCard />
               </>
             ),
+            sent: <GratefulCard />,
           }[state]
         }
       </div>
