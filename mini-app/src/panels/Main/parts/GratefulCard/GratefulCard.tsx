@@ -6,7 +6,11 @@ import WormKingIcon from 'assets/icons/worm-king.svg?react';
 
 import styles from './GratefulCard.module.css';
 
-export const GratefulCard = memo(() => (
+type Props = {
+  goToCertificate: () => void;
+};
+
+export const GratefulCard = memo<Props>(({goToCertificate}) => (
   <Card>
     <Div>
       <div className={styles.container}>
@@ -35,7 +39,7 @@ export const GratefulCard = memo(() => (
           >
             Поделиться в истории
           </Button>
-          <Button rounded size="l" mode="secondary" appearance="neutral" stretched>
+          <Button rounded size="l" mode="secondary" appearance="neutral" stretched onClick={goToCertificate}>
             Удостоверение прихожанина
           </Button>
         </ButtonGroup>

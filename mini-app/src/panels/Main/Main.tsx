@@ -6,10 +6,11 @@ import {GratefulCard, Header, NotVisitedCard, SendWormCard, VisitedCard, WormPat
 
 type Props = {
   id: string;
+  goToCertificate: () => void;
 };
 
-export const Main = memo<Props>(({id}) => {
-  const state = 'sent';
+export const Main = memo<Props>(({id, goToCertificate}) => {
+  const state = 'visited';
 
   return (
     <Panel id={id}>
@@ -24,14 +25,14 @@ export const Main = memo<Props>(({id}) => {
               notVisited: <NotVisitedCard />,
               visited: (
                 <div>
-                  <VisitedCard />
+                  <VisitedCard goToCertificate={goToCertificate} />
 
                   <Spacing size={16} />
 
                   <SendWormCard />
                 </div>
               ),
-              sent: <GratefulCard />,
+              sent: <GratefulCard goToCertificate={goToCertificate} />,
             }[state]
           }
         </div>

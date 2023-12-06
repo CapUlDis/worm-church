@@ -1,0 +1,1 @@
+export {Сertificate} from './Сertificate';

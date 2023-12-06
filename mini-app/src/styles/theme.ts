@@ -22,6 +22,7 @@ theme.colors.colorBackgroundSecondaryAlpha = BASE_BACKGROUND_COLOR;
 theme.colors.colorBackgroundSecondary = BASE_CARD_COLOR;
 theme.colors.colorTextSecondary = BASE_COLOR_SECONDARY;
 theme.colors.colorIconAccent = BASE_ACCENT_COLOR;
+theme.colors.colorIconAccentThemed = BASE_ACCENT_COLOR;
 theme.colors.colorTextLink = '#000';
 
 theme.sizeBasePaddingVertical = {

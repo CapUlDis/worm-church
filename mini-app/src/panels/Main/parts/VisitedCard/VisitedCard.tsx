@@ -6,7 +6,11 @@ import WormKingIcon from 'assets/icons/worm-king.svg?react';
 
 import styles from './VisitedCard.module.css';
 
-export const VisitedCard = memo(() => {
+type Props = {
+  goToCertificate: () => void;
+};
+
+export const VisitedCard = memo<Props>(({goToCertificate}) => {
   return (
     <Card>
       <Div>
@@ -42,7 +46,7 @@ export const VisitedCard = memo(() => {
           >
             Поделиться в истории
           </Button>
-          <Button rounded size="l" mode="secondary" appearance="neutral" stretched>
+          <Button rounded size="l" mode="secondary" appearance="neutral" stretched onClick={goToCertificate}>
             Удостоверение прихожанина
           </Button>
         </ButtonGroup>
