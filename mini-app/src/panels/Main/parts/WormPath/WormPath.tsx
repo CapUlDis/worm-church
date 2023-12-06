@@ -1,5 +1,6 @@
 import {Icon24ChevronCompactRight} from '@vkontakte/icons';
 import {Avatar, Caption, Subhead, Title} from '@vkontakte/vkui';
+import cn from 'classnames';
 import {memo} from 'react';
 
 import styles from './WormPath.module.css';
@@ -49,7 +50,7 @@ export const WormPath = memo(() => {
       <div className={styles.path}>
         {path.map(({id, name, broughtBy}, index) => (
           <>
-            <div key={id} className={styles.cell}>
+            <div key={id} className={cn(styles.cell, index % TWO === 1 && styles.reversed)}>
               <Avatar size={32} />
               <div>
                 <Subhead>{name}</Subhead>

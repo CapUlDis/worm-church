@@ -7,9 +7,3 @@
   display: flex;
   flex-direction: column;
 }
-
-@media screen and (width < 600px) {
-  .column {
-    margin: 0;
-  }
-}
