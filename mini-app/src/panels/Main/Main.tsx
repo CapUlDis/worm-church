@@ -2,14 +2,14 @@ import {Panel, PanelHeader} from '@vkontakte/vkui';
 import {memo} from 'react';
 
 import styles from './Main.module.css';
-import {Header, NotVisitedCard, VisitedCard} from './parts';
+import {Header, NotVisitedCard, SendWormCard, VisitedCard} from './parts';
 
 type Props = {
   id: string;
 };
 
 export const Main = memo<Props>(({id}) => {
-  const visited = true;
+  const state = 'visited';
 
   return (
     <Panel id={id}>
@@ -17,7 +17,19 @@ export const Main = memo<Props>(({id}) => {
 
       <Header />
 
-      <div className={styles.cards}>{!visited ? <NotVisitedCard /> : <VisitedCard />}</div>
+      <div className={styles.cards}>
+        {
+          {
+            notVisited: <NotVisitedCard />,
+            visited: (
+              <>
+                <VisitedCard />
+                <SendWormCard />
+              </>
+            ),
+          }[state]
+        }
+      </div>
     </Panel>
   );
 });
