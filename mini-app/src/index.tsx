@@ -1,6 +1,6 @@
 import bridge, {parseURLSearchParamsForGetLaunchParams} from '@vkontakte/vk-bridge';
 import {useAdaptivity, useInsets} from '@vkontakte/vk-bridge-react';
-import {AdaptivityProvider, AppRoot, ConfigProvider} from '@vkontakte/vkui';
+import {AdaptivityProvider, AppRoot, ConfigProvider, SizeType} from '@vkontakte/vkui';
 import {memo} from 'react';
 import {createRoot} from 'react-dom/client';
 
@@ -27,7 +27,7 @@ const Root = memo(() => {
       hasCustomPanelHeaderAfter={true}
     >
       <style>{themeStyles}</style>
-      <AdaptivityProvider {...vkBridgeAdaptivityProps}>
+      <AdaptivityProvider {...vkBridgeAdaptivityProps} sizeY={SizeType.REGULAR}>
         <AppRoot mode="full" safeAreaInsets={vkBridgeInsets}>
           <App />
         </AppRoot>

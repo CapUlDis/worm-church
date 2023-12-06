@@ -8,11 +8,14 @@ const theme: ThemeDescription = {
 };
 
 const BASE_BACKGROUND_COLOR = '#f0e7de';
+const BASE_ACCENT_COLOR = '#ff7a00';
+
 const BASE_PADDING = 16;
 const BASE_BORDER_RADIUS = 32;
 
 theme.colors.colorBackground = BASE_BACKGROUND_COLOR;
 theme.colors.colorBackgroundContent = BASE_BACKGROUND_COLOR;
+theme.colors.colorBackgroundAccentThemed = BASE_ACCENT_COLOR;
 theme.colors.colorBackgroundSecondaryAlpha = BASE_BACKGROUND_COLOR;
 theme.colors.colorTextLink = '#000';
 
@@ -52,6 +55,15 @@ theme.fontTitle2 = {
 };
 
 theme.fontTitle3 = {
+  regular: {
+    fontFamily: 'SF Pro Text',
+    lineHeight: 22,
+    fontWeight: 400,
+    fontSize: 17,
+  },
+};
+
+theme.fontHeadline1 = {
   regular: {
     fontFamily: 'SF Pro Text',
     lineHeight: 22,

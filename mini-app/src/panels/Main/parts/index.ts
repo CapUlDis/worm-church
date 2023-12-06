@@ -1,2 +1,3 @@
 export {Header} from './Header';
-export {NotVisitedCard} from './NotVisitedCard/NotVisitedCard';
+export {NotVisitedCard} from './NotVisitedCard';
+export {VisitedCard} from './VisitedCard';
