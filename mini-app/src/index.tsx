@@ -4,6 +4,7 @@ import {AdaptivityProvider, AppRoot, ConfigProvider, SizeType} from '@vkontakte/
 import {memo} from 'react';
 import {createRoot} from 'react-dom/client';
 
+import 'styles/colors.css';
 import {themeStyles} from 'styles/theme';
 import 'styles/typography.css';
 

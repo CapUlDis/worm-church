@@ -10,6 +10,7 @@ const theme: ThemeDescription = {
 const BASE_BACKGROUND_COLOR = '#f0e7de';
 const BASE_ACCENT_COLOR = '#ff7a00';
 const BASE_CARD_COLOR = '#fffaf4';
+const BASE_COLOR_SECONDARY = '#988a7c';
 
 const BASE_PADDING = 16;
 const BASE_BORDER_RADIUS = 32;
@@ -19,6 +20,8 @@ theme.colors.colorBackgroundContent = BASE_BACKGROUND_COLOR;
 theme.colors.colorBackgroundAccentThemed = BASE_ACCENT_COLOR;
 theme.colors.colorBackgroundSecondaryAlpha = BASE_BACKGROUND_COLOR;
 theme.colors.colorBackgroundSecondary = BASE_CARD_COLOR;
+theme.colors.colorTextSecondary = BASE_COLOR_SECONDARY;
+theme.colors.colorIconAccent = BASE_ACCENT_COLOR;
 theme.colors.colorTextLink = '#000';
 
 theme.sizeBasePaddingVertical = {

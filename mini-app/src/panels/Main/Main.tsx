@@ -1,8 +1,8 @@
-import {Panel, PanelHeader} from '@vkontakte/vkui';
+import {Panel, PanelHeader, Spacing} from '@vkontakte/vkui';
 import {memo} from 'react';
 
 import styles from './Main.module.css';
-import {GratefulCard, Header, NotVisitedCard, SendWormCard, VisitedCard} from './parts';
+import {GratefulCard, Header, NotVisitedCard, SendWormCard, VisitedCard, WormPath} from './parts';
 
 type Props = {
   id: string;
@@ -17,19 +17,26 @@ export const Main = memo<Props>(({id}) => {
 
       <Header />
 
-      <div className={styles.cards}>
-        {
+      <div className={styles.column}>
+        <div className={styles.cards}>
           {
-            notVisited: <NotVisitedCard />,
-            visited: (
-              <>
-                <VisitedCard />
-                <SendWormCard />
-              </>
-            ),
-            sent: <GratefulCard />,
-          }[state]
-        }
+            {
+              notVisited: <NotVisitedCard />,
+              visited: (
+                <div>
+                  <VisitedCard />
+
+                  <Spacing size={16} />
+
+                  <SendWormCard />
+                </div>
+              ),
+              sent: <GratefulCard />,
+            }[state]
+          }
+        </div>
+
+        <WormPath />
       </div>
     </Panel>
   );

@@ -1,12 +1,15 @@
 .cards {
-  padding: 24px calc((100% - 400px) / 2);
+  padding: 24px 16px;
+}
+
+.column {
+  margin: 0 calc((100% - 400px) / 2) 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 @media screen and (width < 600px) {
-  .cards {
-    padding: 24px 20px;
+  .column {
+    margin: 0;
   }
 }
