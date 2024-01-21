@@ -1,14 +1,14 @@
-import {Injectable, Logger} from '@nestjs/common';
-import Knex from 'knex';
+import {Injectable, Logger, OnModuleDestroy} from '@nestjs/common';
+import Knex, {type Knex as KnexConnection} from 'knex';
 
-interface IDatabaseService {
+interface IDatabaseService extends OnModuleDestroy {
   getKnex();
 }
 
 @Injectable()
 export class DatabaseService implements IDatabaseService {
   private readonly logger: Logger;
-  private _knexConnection: any;
+  private _knexConnection: KnexConnection;
   constructor() {
     this.logger = new Logger('DatabaseService');
   }
@@ -28,5 +28,14 @@ export class DatabaseService implements IDatabaseService {
     }
 
     return this._knexConnection;
+  }
+
+  async onModuleDestroy() {
+    if (!this._knexConnection) {
+      return;
+    }
+
+    await this._knexConnection.destroy();
+    return;
   }
 }

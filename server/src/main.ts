@@ -1,13 +1,15 @@
 import {ConfigModule} from '@nestjs/config';
 import {NestFactory} from '@nestjs/core';
+import {setupGracefulShutdown} from 'nestjs-graceful-shutdown';
 
 import {AppModule} from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  await app.listen(3004);
-
+  setupGracefulShutdown({app});
   await ConfigModule.envVariablesLoaded;
+
+  await app.listen(3004);
 }
 
 bootstrap();
