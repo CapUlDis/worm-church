@@ -18,6 +18,9 @@ const config: {[key: string]: Knex.Config} = {
     migrations: {
       directory: './src/database/migrations',
     },
+    seeds: {
+      directory: './src/database/seeds',
+    },
   },
 };
 

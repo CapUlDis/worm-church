@@ -4,8 +4,8 @@ export async function up(knex: Knex): Promise<void> {
   return knex.schema.createTable('users', (table) => {
     table.integer('vk_id').primary();
     table.increments('serial_number');
-    table.integer('invited_count');
-    table.specificType('parent_ids', 'INT[]');
+    table.integer('invited_count').defaultTo(0);
+    table.specificType('ancestors_ids', 'INT[]');
   });
 }
 

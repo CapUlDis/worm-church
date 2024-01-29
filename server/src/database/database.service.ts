@@ -1,5 +1,6 @@
 import {Injectable, Logger, OnModuleDestroy} from '@nestjs/common';
 import Knex, {type Knex as KnexConnection} from 'knex';
+import {knexSnakeCaseMappers} from 'objection';
 
 interface IDatabaseService extends OnModuleDestroy {
   getKnex();
@@ -10,7 +11,7 @@ export class DatabaseService implements IDatabaseService {
   private readonly logger: Logger;
   private _knexConnection: KnexConnection;
   constructor() {
-    this.logger = new Logger('DatabaseService');
+    this.logger = new Logger(DatabaseService.name);
   }
 
   getKnex() {
@@ -24,6 +25,8 @@ export class DatabaseService implements IDatabaseService {
           database: process.env.DB_NAME,
           password: process.env.DB_PASSWORD,
         },
+
+        ...knexSnakeCaseMappers(),
       });
     }
 
