@@ -9,8 +9,14 @@ export class CryptoService {
 
   constructor() {
     this.logger = new Logger(CryptoService.name);
-    this.key = createHash('sha512').update(process.env.HASH_KEY_SECRET).digest('hex').substring(0, 32);
-    this.encryptionIV = createHash('sha512').update(process.env.HASH_IV_SECRET).digest('hex').substring(0, 16);
+    this.key = createHash('sha512')
+      .update(process.env.HASH_KEY_SECRET ?? '')
+      .digest('hex')
+      .substring(0, 32);
+    this.encryptionIV = createHash('sha512')
+      .update(process.env.HASH_IV_SECRET ?? '')
+      .digest('hex')
+      .substring(0, 16);
   }
 
   encryptData(data: string) {
@@ -26,7 +32,7 @@ export class CryptoService {
 
       return decipher.update(buff.toString('utf8'), 'hex', 'utf8') + decipher.final('utf8');
     } catch (error) {
-      this.logger.error("Invalid link's hash", error.stack);
+      this.logger.error("Invalid link's hash", error instanceof Error ? error.stack : '');
 
       throw new ForbiddenException('Некорректная ссылка');
     }

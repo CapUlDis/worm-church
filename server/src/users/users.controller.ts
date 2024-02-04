@@ -1,4 +1,4 @@
-import {Body, Controller, Logger, Post} from '@nestjs/common';
+import {Body, Controller, Get, Logger, Param, Post} from '@nestjs/common';
 import {CryptoService} from 'src/crypto';
 
 import {CreateUserDto} from './dto/create-user.dto';
@@ -15,17 +15,32 @@ export class UsersController {
     this.logger = new Logger(UsersController.name);
   }
 
+  @Get(':vkId')
+  async getUser(@Param('vkId') vkId: string) {
+    const totalUsers = await this.usersService.getTotalUsers();
+
+    const user = await this.usersService.getUser(vkId);
+
+    return {
+      user,
+      totalUsers,
+    };
+  }
+
   @Post()
   async checkParentAndCreateUser(@Body() creatUserDto: CreateUserDto) {
-    const parentId = parseInt(this.cryptoService.decryptData(creatUserDto.parentHash), 10);
+    const parentId = this.cryptoService.decryptData(creatUserDto.parentHash);
 
     const newUser = await this.usersService.createUser({vkId: creatUserDto.vkId, parentId});
+
+    const totalUsers = await this.usersService.getTotalUsers();
 
     const childHash = await this.cryptoService.encryptData(creatUserDto.vkId.toString());
 
     return {
       ...newUser,
       childHash,
+      totalUsers,
     };
   }
 }

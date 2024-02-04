@@ -1,4 +1,4 @@
 export class CreateUserDto {
-  vkId: number;
+  vkId: string;
   parentHash: string;
 }

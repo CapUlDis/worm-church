@@ -3,7 +3,7 @@ import Knex, {type Knex as KnexConnection} from 'knex';
 import {knexSnakeCaseMappers} from 'objection';
 
 interface IDatabaseService extends OnModuleDestroy {
-  getKnex();
+  getKnex(): KnexConnection;
 }
 
 @Injectable()
