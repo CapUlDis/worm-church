@@ -1,4 +1,5 @@
 export enum PANELS_IDS {
+  LOADER = 'LOADER',
   MAIN = 'MAIN',
   CERTIFICATE = 'CERTIFICATE',
 }

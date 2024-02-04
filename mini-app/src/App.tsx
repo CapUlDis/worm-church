@@ -1,16 +1,20 @@
-import {ModalRoot, SplitCol, SplitLayout, View} from '@vkontakte/vkui';
+import {ModalRoot, ScreenSpinner, SplitCol, SplitLayout, View} from '@vkontakte/vkui';
 import '@vkontakte/vkui/dist/components.css';
-import {memo, useCallback, useMemo, useState} from 'react';
+import {memo, useCallback, useEffect, useMemo, useState} from 'react';
+
+import {useVKWebAppGetUserInfo} from 'api/bridge';
+import {useGetUser} from 'api/server';
 
 import {MODALS_IDS} from 'modals/consts';
 import {GetCertificatePage} from 'modals/GetCertificatePage';
 
 import {PANELS_IDS} from 'panels/consts';
+import {Loader} from 'panels/Loader';
 import {Main} from 'panels/Main';
 import {Сertificate} from 'panels/Сertificate';
 
 export const App = memo(() => {
-  const [activePanel, setActivePanel] = useState<PANELS_IDS>(PANELS_IDS.MAIN);
+  const [activePanel, setActivePanel] = useState<PANELS_IDS>(PANELS_IDS.LOADER);
   const goToCertificate = useCallback(() => setActivePanel(PANELS_IDS.CERTIFICATE), []);
   const goToMain = useCallback(() => setActivePanel(PANELS_IDS.MAIN), []);
 
@@ -27,10 +31,26 @@ export const App = memo(() => {
     [activeModal, closeGetCertificateModal],
   );
 
+  const $vkUser = useVKWebAppGetUserInfo();
+  const $user = useGetUser($vkUser.data?.id);
+
+  useEffect(() => {
+    if ($vkUser.isSuccess && $user.isSuccess) {
+      setActivePanel(PANELS_IDS.MAIN);
+    }
+  }, [$user.isSuccess, $vkUser.isSuccess]);
+
+  const popout = useMemo(
+    () => ($vkUser.isLoading || $user.isLoading ? <ScreenSpinner size="large" /> : null),
+    [$user.isLoading, $vkUser.isLoading],
+  );
+
   return (
-    <SplitLayout modal={modal}>
+    <SplitLayout modal={modal} popout={popout}>
       <SplitCol>
         <View id="view" activePanel={activePanel}>
+          <Loader id={PANELS_IDS.LOADER} />
+
           <Main id={PANELS_IDS.MAIN} goToCertificate={goToCertificate} />
 
           <Сertificate
