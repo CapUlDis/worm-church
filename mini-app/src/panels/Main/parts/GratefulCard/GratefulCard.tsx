@@ -18,7 +18,7 @@ export const GratefulCard = memo<Props>(({goToCertificate}) => (
 
         <Spacing size={16} />
 
-        <Title level="3" weight="1">
+        <Title level="3" weight="1" Component="h3">
           Вы отправили Святого Червячка в его дальнейшее путешествие{' '}
         </Title>
 

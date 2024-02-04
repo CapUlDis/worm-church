@@ -31,7 +31,7 @@ export const Сertificate = memo<Props>(({id, goToMain, openGetCertificateModal}
   return (
     <Panel id={id}>
       <PanelHeader
-        separator={false}
+        delimiter="none"
         // eslint-disable-next-line react-memo/require-usememo
         before={<PanelHeaderBack onClick={goToMain} label={platform === Platform.VKCOM ? 'Назад' : undefined} />}
       />
@@ -45,7 +45,7 @@ export const Сertificate = memo<Props>(({id, goToMain, openGetCertificateModal}
 
             <Spacing size={28} />
 
-            <Title level="1" weight="2">
+            <Title level="1" weight="2" Component="h1">
               Ваше удостоверение
               <br />
               прихожанина Церкви
@@ -58,7 +58,7 @@ export const Сertificate = memo<Props>(({id, goToMain, openGetCertificateModal}
 
             <Spacing size={28} />
 
-            <Title level="1" weight="2">
+            <Title level="1" weight="2" Component="h1">
               Так будет выглядеть
               <br />
               ваше удостоверение

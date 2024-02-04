@@ -17,7 +17,7 @@ export const VisitedCard = memo<Props>(({goToCertificate}) => {
         <div className={styles.textContainer}>
           <div className={styles.header}>
             <WormKingIcon />
-            <Title level="3" weight="1">
+            <Title level="3" weight="1" Component="h3">
               Поздравляем! Вашу
               <br />
               страницу посетил Святой Червячок!

@@ -4,7 +4,7 @@ import {memo} from 'react';
 export const SendWormCard = memo(() => (
   <Card>
     <Div>
-      <Title level="3" weight="1">
+      <Title level="3" weight="1" Component="h3">
         Продолжите путь Святого Червячка, чтобы благодать не знала границ!
       </Title>
 

@@ -11,7 +11,7 @@ export const Header = memo(() => {
       <WormChurchIcon />
       <div className={styles.textBlocks}>
         <div className={styles.block}>
-          <Title level="1" weight="2">
+          <Title level="1" weight="2" Component="h1">
             Церковь Святого
             <br />
             Червячка

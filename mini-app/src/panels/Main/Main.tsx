@@ -33,7 +33,7 @@ export const Main = memo<Props>(({id, goToCertificate}) => {
 
   return (
     <Panel id={id}>
-      <PanelHeader separator={false} />
+      <PanelHeader delimiter="none" />
 
       <Header />
 

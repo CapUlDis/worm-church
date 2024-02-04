@@ -1,38 +1,38 @@
 import {Icon24ChevronCompactRight} from '@vkontakte/icons';
 import {Avatar, Caption, Subhead, Title} from '@vkontakte/vkui';
 import cn from 'classnames';
-import {memo} from 'react';
+import {Fragment, memo} from 'react';
 
 import styles from './WormPath.module.css';
 
 const path = [
   {
-    id: 'ass 2',
+    id: 'ass2',
     name: 'Иван Иванов',
     broughtBy: 'Иван Иванов',
   },
   {
-    id: 'ass 3',
+    id: 'ass3',
     name: 'Иван Иванов',
     broughtBy: 'Иван Иванов',
   },
   {
-    id: 'ass 4',
+    id: 'ass4',
     name: 'Иван Иванов',
     broughtBy: 'Иван Иванов',
   },
   {
-    id: 'ass 5',
+    id: 'ass5',
     name: 'Иван Иванов',
     broughtBy: 'Иван Иванов',
   },
   {
-    id: 'ass 6',
+    id: 'ass6',
     name: 'Иван Иванов',
     broughtBy: 'Иван Иванов',
   },
   {
-    id: 'ass 7',
+    id: 'ass7',
     name: 'Иван Иванов',
     broughtBy: 'Иван Иванов',
   },
@@ -43,17 +43,17 @@ const TWO = 2;
 export const WormPath = memo(() => {
   return (
     <div className={styles.container}>
-      <Title className={styles.title} level="3" weight="2">
+      <Title className={styles.title} level="3" weight="2" Component="h3">
         Путь Святого Червячка
       </Title>
 
       <div className={styles.path}>
         {path.map(({id, name, broughtBy}, index) => (
-          <>
-            <div key={id} className={cn(styles.cell, index % TWO === 1 && styles.reversed)}>
+          <Fragment key={id}>
+            <div className={cn(styles.cell, index % TWO === 1 && styles.reversed)}>
               <Avatar size={32} />
               <div>
-                <Subhead>{name}</Subhead>
+                <Subhead Component="h5">{name}</Subhead>
                 <Caption className={styles.caption} weight="3">{`привёл ${broughtBy}`}</Caption>
               </div>
             </div>
@@ -65,7 +65,7 @@ export const WormPath = memo(() => {
             )}
 
             {index % TWO === 1 && <div className={styles.break} />}
-          </>
+          </Fragment>
         ))}
       </div>
     </div>

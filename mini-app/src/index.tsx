@@ -32,7 +32,7 @@ const Root = memo(() => {
         hasCustomPanelHeaderAfter={true}
       >
         <style>{themeStyles}</style>
-        <AdaptivityProvider {...vkBridgeAdaptivityProps} sizeY={SizeType.REGULAR}>
+        <AdaptivityProvider {...vkBridgeAdaptivityProps} sizeX={SizeType.COMPACT} sizeY={SizeType.REGULAR}>
           <AppRoot mode="full" safeAreaInsets={vkBridgeInsets}>
             <App />
           </AppRoot>

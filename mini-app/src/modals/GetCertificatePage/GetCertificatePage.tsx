@@ -59,7 +59,7 @@ export const GetCertificatePage = memo<Props>(({id, onClose}) => {
       }
     >
       <div className={styles.container}>
-        <Title className={styles.title} level="1" weight="2">
+        <Title className={styles.title} level="1" weight="2" Component="h1">
           Получить
           <br />
           удостоверение

@@ -11,7 +11,7 @@ export const NotVisitedCard = memo(() => (
       <div className={styles.textContainer}>
         <div className={styles.header}>
           <WormKingIcon />
-          <Title level="3" weight="1">
+          <Title level="3" weight="1" Component="h3">
             Как стать частью Церкви
             <br />
             Святого Червячка?

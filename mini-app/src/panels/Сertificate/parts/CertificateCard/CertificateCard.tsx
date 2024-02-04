@@ -13,7 +13,7 @@ export const CertificateCard = memo(() => {
 
         <Spacing size={16} />
 
-        <Title level="2" weight="2">
+        <Title level="2" weight="2" Component="h2">
           Удостоверение
           <br />
           прихожанина Церкви
@@ -22,14 +22,14 @@ export const CertificateCard = memo(() => {
 
         <Spacing size={8} />
 
-        <Subhead>
+        <Subhead Component="h5">
           Выдано Кириллу Сидорцу
           <br />3 октября 2023 года
         </Subhead>
 
         <Spacing size={8} />
 
-        <Subhead>Удостоверение №2914</Subhead>
+        <Subhead Component="h5">Удостоверение №2914</Subhead>
       </div>
     </Card>
   );
