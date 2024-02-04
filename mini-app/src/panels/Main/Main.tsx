@@ -1,8 +1,24 @@
 import {Panel, PanelHeader, Spacing} from '@vkontakte/vkui';
 import {memo} from 'react';
 
+import {useVKWebAppGetUserInfo} from 'api/bridge';
+import {useGetUser} from 'api/server';
+
+import {MAIN_STATE, MAX_INVITED} from './consts';
 import styles from './Main.module.css';
 import {GratefulCard, Header, NotVisitedCard, SendWormCard, VisitedCard, WormPath} from './parts';
+
+const getPanelState = (data: ReturnType<typeof useGetUser>['data']) => {
+  if (!data?.user) {
+    return MAIN_STATE.NOT_VISITED;
+  }
+
+  if (data.user.invitedCount < MAX_INVITED) {
+    return MAIN_STATE.VISITED;
+  }
+
+  return MAIN_STATE.SENT;
+};
 
 type Props = {
   id: string;
@@ -10,7 +26,10 @@ type Props = {
 };
 
 export const Main = memo<Props>(({id, goToCertificate}) => {
-  const state = 'visited';
+  const $vkUser = useVKWebAppGetUserInfo();
+  const $user = useGetUser($vkUser.data?.id);
+
+  const state = getPanelState($user.data);
 
   return (
     <Panel id={id}>
@@ -22,8 +41,8 @@ export const Main = memo<Props>(({id, goToCertificate}) => {
         <div className={styles.cards}>
           {
             {
-              notVisited: <NotVisitedCard />,
-              visited: (
+              [MAIN_STATE.NOT_VISITED]: <NotVisitedCard />,
+              [MAIN_STATE.VISITED]: (
                 <div>
                   <VisitedCard goToCertificate={goToCertificate} />
 
@@ -32,7 +51,7 @@ export const Main = memo<Props>(({id, goToCertificate}) => {
                   <SendWormCard />
                 </div>
               ),
-              sent: <GratefulCard goToCertificate={goToCertificate} />,
+              [MAIN_STATE.SENT]: <GratefulCard goToCertificate={goToCertificate} />,
             }[state]
           }
         </div>

@@ -9,6 +9,8 @@ async function bootstrap() {
   setupGracefulShutdown({app});
   await ConfigModule.envVariablesLoaded;
 
+  app.enableCors();
+
   await app.listen(3004);
 }
 

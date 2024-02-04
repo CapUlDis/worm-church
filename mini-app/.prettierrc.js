@@ -10,7 +10,9 @@ module.exports = {
   bracketSpacing: false,
   importOrder: [
     '<THIRD_PARTY_MODULES>',
+    '^api(/.*)$',
     '^assets(/.*)$',
+    '^interfaces(/.*)$',
     '^modals(/.*)$',
     '^panels(/.*)$',
     '^styles(/.*)$',

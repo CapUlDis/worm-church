@@ -24,7 +24,8 @@
     "react-hooks",
     "react-memo",
     "unused-imports",
-    "no-nested-import"
+    "no-nested-import",
+    "@tanstack/eslint-plugin-query"
   ],
   "extends": ["plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
   "parser": "@typescript-eslint/parser",

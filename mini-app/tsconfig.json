@@ -20,7 +20,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
+      "api/*": ["src/api/*"],
       "assets/*": ["src/assets/*"],
+      "interfaces/*": ["src/interfaces/*"],
       "modals/*": ["src/modals/*"],
       "panels/*": ["src/panels/*"],
       "styles/*": ["src/styles/*"],

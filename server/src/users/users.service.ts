@@ -7,12 +7,31 @@ import {CreateUser, User} from './interfaces/user.interface';
 export class UsersService {
   constructor(private readonly databaseService: DatabaseService) {}
 
+  async getUser(vkId: string): Promise<User | null> {
+    const knex = this.databaseService.getKnex();
+
+    const [user] = await knex
+      .select('vkId', 'serialNumber', 'invitedCount', 'ancestorsIds')
+      .from('users')
+      .where('vkId', vkId);
+
+    return user ?? null;
+  }
+
+  async getTotalUsers() {
+    const knex = this.databaseService.getKnex();
+
+    const [{count: totalUsers}] = await knex('users').count('vkId');
+
+    return Number(totalUsers);
+  }
+
   async createUser(user: CreateUser) {
     const knex = this.databaseService.getKnex();
 
     const [parent]: Pick<User, 'ancestorsIds' | 'invitedCount'>[] = await knex
       .select('ancestorsIds', 'invitedCount')
-      .from<User>('users')
+      .from('users')
       .where('vkId', user.parentId);
 
     if (parent.invitedCount === 2) {

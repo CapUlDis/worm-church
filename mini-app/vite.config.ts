@@ -26,7 +26,9 @@ export default defineConfig(() => {
     },
     resolve: {
       alias: {
+        api: path.resolve(__dirname, './src/api'),
         assets: path.resolve(__dirname, './src/assets'),
+        interfaces: path.resolve(__dirname, './src/interfaces'),
         modals: path.resolve(__dirname, './src/modals'),
         panels: path.resolve(__dirname, './src/panels'),
         styles: path.resolve(__dirname, './src/styles'),
