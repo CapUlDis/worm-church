@@ -6,7 +6,7 @@ import {AppController} from './app.controller';
 import {AppService} from './app.service';
 import {CryptoService} from './crypto/crypto.service';
 import {DatabaseService} from './database/database.service';
-import {LoggerMiddleware} from './middlewares';
+import {AuthMiddleware, LoggerMiddleware} from './middlewares';
 import {UsersController, UsersService} from './users';
 
 @Module({
@@ -16,6 +16,6 @@ import {UsersController, UsersService} from './users';
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
-    consumer.apply(LoggerMiddleware).forRoutes('*');
+    consumer.apply(LoggerMiddleware, AuthMiddleware).forRoutes('*');
   }
 }

@@ -1,5 +1,5 @@
 import {ForbiddenException, Injectable, Logger} from '@nestjs/common';
-import {createCipheriv, createDecipheriv, createHash} from 'node:crypto';
+import {createCipheriv, createDecipheriv, createHash, createHmac} from 'node:crypto';
 
 @Injectable()
 export class CryptoService {
@@ -36,5 +36,15 @@ export class CryptoService {
 
       throw new ForbiddenException('Некорректная ссылка');
     }
+  }
+
+  encryptSha256(data: string, secretKey: string = '') {
+    return createHmac('sha256', secretKey)
+      .update(data)
+      .digest()
+      .toString('base64')
+      .replace(/\+/g, '-')
+      .replace(/\//g, '_')
+      .replace(/=$/, '');
   }
 }
