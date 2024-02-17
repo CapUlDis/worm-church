@@ -2,8 +2,7 @@ import {ModalRoot, ScreenSpinner, SplitCol, SplitLayout, View} from '@vkontakte/
 import '@vkontakte/vkui/dist/components.css';
 import {memo, useCallback, useEffect, useMemo, useState} from 'react';
 
-import {useVKWebAppGetUserInfo} from 'api/bridge';
-import {useGetUser} from 'api/server';
+import {useGetOrCreateUser} from 'api/server';
 
 import {MODALS_IDS} from 'modals/consts';
 import {GetCertificatePage} from 'modals/GetCertificatePage';
@@ -31,19 +30,15 @@ export const App = memo(() => {
     [activeModal, closeGetCertificateModal],
   );
 
-  const $vkUser = useVKWebAppGetUserInfo();
-  const $user = useGetUser($vkUser.data?.id);
+  const $user = useGetOrCreateUser();
 
   useEffect(() => {
-    if ($vkUser.isSuccess && $user.isSuccess) {
+    if ($user.isSuccess || $user.isError) {
       setActivePanel(PANELS_IDS.MAIN);
     }
-  }, [$user.isSuccess, $vkUser.isSuccess]);
+  }, [$user.isError, $user.isSuccess]);
 
-  const popout = useMemo(
-    () => ($vkUser.isLoading || $user.isLoading ? <ScreenSpinner size="large" /> : null),
-    [$user.isLoading, $vkUser.isLoading],
-  );
+  const popout = useMemo(() => ($user.isFetching ? <ScreenSpinner size="large" /> : null), [$user.isFetching]);
 
   return (
     <SplitLayout modal={modal} popout={popout}>

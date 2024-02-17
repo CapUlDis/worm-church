@@ -1,7 +1,6 @@
 import {Panel, PanelHeader, Spacing} from '@vkontakte/vkui';
 import {memo} from 'react';
 
-import {useVKWebAppGetUserInfo} from 'api/bridge';
 import {useGetUser} from 'api/server';
 
 import {MAIN_STATE, MAX_INVITED} from './consts';
@@ -26,8 +25,7 @@ type Props = {
 };
 
 export const Main = memo<Props>(({id, goToCertificate}) => {
-  const $vkUser = useVKWebAppGetUserInfo();
-  const $user = useGetUser($vkUser.data?.id);
+  const $user = useGetUser();
 
   const state = getPanelState($user.data);
 

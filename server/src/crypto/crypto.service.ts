@@ -22,7 +22,9 @@ export class CryptoService {
   encryptData(data: string) {
     const cipher = createCipheriv('aes-256-cbc', this.key, this.encryptionIV);
 
-    return Buffer.from(cipher.update(data, 'utf8', 'hex') + cipher.final('hex')).toString('base64');
+    return Buffer.from(cipher.update(data, 'utf8', 'hex') + cipher.final('hex'))
+      .toString('base64')
+      .replace(/=$/, '');
   }
 
   decryptData(encryptedData: string) {

@@ -23,6 +23,7 @@ export class UsersController {
 
     return {
       user,
+      childHash: user && this.cryptoService.encryptData(vkId),
       totalUsers,
     };
   }
@@ -31,16 +32,6 @@ export class UsersController {
   async checkParentAndCreateUser(@Body() creatUserDto: CreateUserDto) {
     const parentId = this.cryptoService.decryptData(creatUserDto.parentHash);
 
-    const newUser = await this.usersService.createUser({vkId: creatUserDto.vkId, parentId});
-
-    const totalUsers = await this.usersService.getTotalUsers();
-
-    const childHash = await this.cryptoService.encryptData(creatUserDto.vkId.toString());
-
-    return {
-      ...newUser,
-      childHash,
-      totalUsers,
-    };
+    await this.usersService.createUser({vkId: creatUserDto.vkId, parentId});
   }
 }

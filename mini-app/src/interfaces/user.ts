@@ -5,3 +5,9 @@ export interface User {
   invitedCount: 0 | 1 | 2;
   ancestorsIds: number[];
 }
+
+export interface UserResponse {
+  user?: User;
+  childHash?: string;
+  totalUsers: number;
+}
