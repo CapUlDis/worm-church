@@ -5,7 +5,11 @@ import WormChurchIcon from 'assets/icons/worm-church.svg?react';
 
 import styles from './Header.module.css';
 
-export const Header = memo(() => {
+type Props = {
+  totalUsers: number;
+};
+
+export const Header = memo<Props>(({totalUsers}) => {
   return (
     <div className={styles.container}>
       <WormChurchIcon />
@@ -21,7 +25,7 @@ export const Header = memo(() => {
           <Text>
             Червячок уже посетил{' '}
             <Text weight="2" normalize={false}>
-              873 384
+              {totalUsers.toLocaleString()}
             </Text>{' '}
             профилей
             <br />

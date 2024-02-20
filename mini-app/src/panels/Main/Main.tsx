@@ -33,7 +33,7 @@ export const Main = memo<Props>(({id, goToCertificate}) => {
     <Panel id={id}>
       <PanelHeader delimiter="none" />
 
-      <Header />
+      <Header totalUsers={$user.data?.totalUsers ?? 0} />
 
       <div className={styles.column}>
         <div className={styles.cards}>
